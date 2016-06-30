@@ -21,7 +21,10 @@ namespace FontInstaller
                 foreach (string s in list)
                 {
                     if (Path.GetExtension(s) != ".ttf")
+                    {
                         Console.WriteLine("Err> " + s + " is not a font file!");
+                        continue;
+                    }
                     PrivateFontCollection fontCol = new PrivateFontCollection();
                     fontCol.AddFontFile(s);
                     Console.WriteLine("Install> " + fontCol.Families[0].Name);
